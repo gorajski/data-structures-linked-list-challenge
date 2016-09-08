@@ -12,9 +12,16 @@ class LinkedList
 
 	def insert_first(element)
 		new_head = Node.new(element)
+		new_head.index = 0
 
 		if @head != nil
-			new_head.insert_after(@head)	
+			new_head.insert_after(@head)
+			position = @head
+			until position == nil
+				position.index += 1
+				position = position.other_node
+			end
+			# each { |position| position.index += 1 }
 		else
 			@tail = new_head
 		end
@@ -35,6 +42,7 @@ class LinkedList
 
 	def insert_last(element)
 		new_tail = Node.new(element)
+		# new_tail.index = @tail.index + 1
 
 		if @tail != nil
 			@tail.insert_after(new_tail)
@@ -66,7 +74,25 @@ class LinkedList
 		else
 			return @size
 		end
+	end
 
+	private
+
+	def each(block)
+		position = @head
+		until position == nil
+			yield(position)
+			position = position.other_node
+		end
+	end
+
+	def pretty_print
+		puts self
+		position = @head
+		until position == nil
+			puts "#{position.index} #{position.element} #{position}"
+			position = position.other_node
+		end
 	end
 
 end

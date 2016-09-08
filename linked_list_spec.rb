@@ -77,6 +77,26 @@ describe LinkedList do
 		expect(@list.tail).to eq nil
 	end
 
-	
+	describe 'extended functionality' do
+
+		it 'sets a new head to have an index of 0' do
+			@list.insert_first('a')
+			expect(@list.head.index).to eq 0
+			@list.insert_first('b')
+			expect(@list.head.index).to eq 0
+		end
+
+		it 'increments the indices of all other downstream elements when new head is added' do
+			@list.insert_first('a')
+			@list.insert_first('b')
+			expect(@list.head.index).to eq 0
+			expect(@list.tail.index).to eq 1
+			@list.insert_first('c')
+			expect(@list.tail.index).to eq 2
+		end
+
+		# it ''
+
+	end
 
 end

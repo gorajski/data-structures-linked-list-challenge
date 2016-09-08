@@ -1,6 +1,6 @@
 class Node
 
-	attr_accessor :element, :other_node
+	attr_accessor :element, :other_node, :index
 
 	def initialize(element)
 		@element = element
