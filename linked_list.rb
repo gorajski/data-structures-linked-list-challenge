@@ -55,7 +55,6 @@ class LinkedList
 		if @tail != nil
 			position = @head
 			loop do
-				puts position
 				if position.other_node == @tail
 					position.remove_after
 					@tail = position
