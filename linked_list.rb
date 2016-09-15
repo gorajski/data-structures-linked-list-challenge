@@ -96,3 +96,26 @@ class LinkedList
 	end
 
 end
+
+
+
+# ------------------TEST CODE
+# class Arrr
+
+#   def initialize(arr)
+#   	@y = arr
+#   end
+
+#   def bonkers
+# 	i = 0
+#   	while i < @y.length
+#       yield(@y[i])
+#       i += 1
+#   	end
+#   end
+
+# end
+
+# a = Arrr.new([1,2,3,4,5,6])
+
+# a.bonkers { |element| puts "#{element}!" }
